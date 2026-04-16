@@ -1,12 +1,16 @@
-data = []
+notes = []
 
-def a(x):
-    if x == 1:
-        n = input("Masukkan catatan: ")
-        data.append(n)
-    elif x == 2:
-        for i in range(len(data)):
-            print(str(i) + data[i])
-    elif x == 3:
-        i = int(input("Index: "))
-        del data[i]
+def add_note():
+    note = input("Masukkan catatan: ")
+    notes.append(note)
+
+def show_notes():
+    for index, note in enumerate(notes):
+        print(f"{index}. {note}")
+
+def delete_note():
+    try:
+        index = int(input("Index: "))
+        notes.pop(index)
+    except:
+        print("Input tidak valid")
